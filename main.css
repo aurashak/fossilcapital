@@ -74,7 +74,6 @@ h3 a:hover { text-decoration: underline; color: black; }
     text-align: center;
     line-height: 1.6;
     max-width: 800px;
-
 }
 
 .courseaboutcontainer a:link {   color: black;
@@ -88,46 +87,39 @@ h3 a:hover { text-decoration: underline; color: black; }
 .aboutcontainer a:active { }
 
 
-
-
 .courseheader {
   justify-content: left;
   position: relative;
-  
 }
 
 .coursenavigation {
   font-size: 20px;
   text-align: left;
-    display: inline-block;
+  display: inline-block;
   color: white;
-margin: 13px 15px 0px 0px;  
-    background: #000;
+  margin: 13px 15px 0px 0px;  
+  background: #000;
   justify-content: left;
-
 }
 
 .coursenavigation a:link {
 text-decoration: none;
-    color: white;
-
+color: white;
 } 
 
 .coursenavigation a:hover {
   text-decoration: none;
-    color: white;
+  color: white;
 }
-
 
 .coursenavigation a:active {
   text-decoration: underline;
-    color: white;
-
+  color: white;
 }
 
 .coursenavigation a:visited {
   text-decoration: none;
-
+  color: white;
 }
 
 
@@ -135,12 +127,11 @@ text-decoration: none;
   display: flex;
   flex-direction: column;
   height: 100vh; /* Set the height of the container to 100% of the viewport height */
-
 }
 
 .coursecontainer {
   display: flex;
   flex-direction: column;
   height: 100vh; /* Set the height of the container to 100% of the viewport height */
-overflow: auto;
+  overflow: auto;
 }
