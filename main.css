@@ -21,7 +21,6 @@ h1 {
   padding: 0px;
   margin: 0px;
   display: inline-block;
-  background-color: #ffe600ce;
 }
 
 h2 {
@@ -52,3 +51,8 @@ h4 {
 h3 a:link { color: black; }
 h3 a:hover { text-decoration: underline; color: black; }
 
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+.container {
+  display: block;
+}
