@@ -51,8 +51,17 @@ h4 {
 h3 a:link { color: black; }
 h3 a:hover { text-decoration: underline; color: black; }
 
-#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+#map { 
+  height: 100%; 
+  width: 100%; 
+}
 
 .container {
   display: block;
+  margin: 0 auto;
+  width: 900px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
 }
