@@ -63,5 +63,86 @@ h3 a:hover { text-decoration: underline; color: black; }
   align-items: center;
   justify-content: center;
   text-align: center;
+}
 
+.courseaboutcontainer {
+  font-size: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 5px 10px;
+  display: block;
+  text-align: left;
+  line-height: 1.6;
+max-width: 800px;
+}
+
+.courseaboutcontainer a:link {   color: black;
+}
+
+.courseaboutcontainer a:hover { text-decoration: underline; }
+
+.aboutcontainer a:link {   color: black; background-color: #ffe600ce; }
+.aboutcontainer a:visited { color: black; }
+.aboutcontainer a:hover { text-decoration: underline; }
+.aboutcontainer a:active { }
+
+
+
+
+.courseheader {
+  justify-content: left;
+  position: relative;
+  
+}
+
+.coursenavigation {
+  font-size: 20px;
+  text-align: left;
+    display: inline-block;
+  color: black;
+  padding: 5px 10px;
+margin: 13px 15px 0px 0px;  
+    background: rgb(237, 237, 237);
+  border-radius: 4px;
+  border: 1px solid black;
+  justify-content: left;
+
+}
+
+.coursenavigation a:link {
+text-decoration: none;
+
+} 
+
+.coursenavigation a:hover {
+  text-decoration: none;
+  background-color: #ffe600ce;
+}
+
+
+.coursenavigation a:active {
+  text-decoration: underline;
+  background-color: #ffe600ce;
+
+}
+
+.coursenavigation a:visited {
+  text-decoration: none;
+  background-color: #ffe600ce;
+
+}
+
+
+.projectcontainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Set the height of the container to 100% of the viewport height */
+
+}
+
+.coursecontainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Set the height of the container to 100% of the viewport height */
+overflow: auto;
 }
