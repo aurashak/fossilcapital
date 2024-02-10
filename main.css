@@ -129,8 +129,6 @@ color: white;
 }
 
 .coursecontainer {
-  display: flex;
-  flex-direction: column;
-  height: 100vh; /* Set the height of the container to 100% of the viewport height */
-  overflow: auto;
+  margin: 50px auto;
+  max-width: 1000px;
 }
