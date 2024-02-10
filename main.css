@@ -68,12 +68,10 @@ h3 a:hover { text-decoration: underline; color: black; }
 .courseaboutcontainer {
     font-size: 20px;
     margin: 20px auto;
-    max-width: 800px;
     padding: 5px 10px;
     display: block;
     text-align: center;
     line-height: 1.6;
-    max-width: 800px;
 }
 
 .courseaboutcontainer a:link {   color: black;
