@@ -57,7 +57,7 @@ h3 a:hover { text-decoration: underline; color: black; background-color: #ffe600
   border-bottom: 1px solid black;
   position: relative;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgb(255, 221, 179);
 
 }
 
@@ -303,6 +303,8 @@ li a:visited {
     border: 1px solid black;
     border-radius: 8px;
     line-height: 1.4;
+    background: rgb(255, 221, 179);
+
 
 }
 
