@@ -1,14 +1,14 @@
 var map = L.map('map').setView([0, 0], 2); // Centered at California and zoom level 6
 
-// Purple icon
-var purpleIcon = L.icon({
-    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-purple.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    tooltipAnchor: [16, -28],
-    shadowSize: [41, 41]
-});
+L.geoJSON(data, {
+    pointToLayer: function (feature, latlng) {
+        return L.marker(latlng); // Default Leaflet marker icon
+    },
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup(feature.properties.name); // Customize the popup content
+    }
+}).addTo(markers);
+
 
 // GeoJSON layer for purple markers with clustering
 var markers = L.markerClusterGroup({
