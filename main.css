@@ -128,3 +128,12 @@ color: rgb(0, 0, 0);
   margin: 50px auto;
   max-width: 1000px;
 }
+
+
+
+
+.leaflet-control {
+  cursor: auto;
+  text-align: left;
+
+}
