@@ -86,13 +86,13 @@ var legend = L.control({ position: 'topleft' });
 legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
     div.innerHTML =
-    div.innerHTML =
-    '<div style="background-color: yellow; width: 25px; height: 25px; border-radius: 50%; display: inline-block; align-items: center; justify-content: center;"></div>' +
-    ' California Mines' +
-    '<br>' +
-    '<div style="background-color: red; width: 25px; height: 5px; display: inline-block; align-items: center; justify-content: center; "></div>' +
-    ' Natural Gas Pipelines';
+        '<div style="background-color: yellow; width: 25px; height: 25px; border-radius: 50%; display: inline-block; line-height: 25px; text-align: center;"></div>' +
+        '<span style="display: inline-block; vertical-align: middle; line-height: 25px;"> California Mines</span>' +
+        '<br>' +
+        '<div style="background-color: red; width: 25px; height: 5px; display: inline-block; line-height: 5px;"></div>' +
+        '<span style="display: inline-block; vertical-align: middle; line-height: 5px;"> Natural Gas Pipelines</span>';
     return div;
 };
 
 legend.addTo(map);
+
