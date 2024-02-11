@@ -75,7 +75,11 @@ h3 a:hover { text-decoration: underline; color: black; background-color: #ffe600
 
 
 
-#map {height: 100vh; width: 100vh;}
+#map {
+    height: 92vh;
+    width: 100%;
+    border-radius: 8px;
+}
 
 .navigation a:link {
   text-decoration: none; 
@@ -219,13 +223,11 @@ overflow: auto;
 
 .courseaboutcontainer {
     font-size: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    padding: 5px 10px;
+    margin: 20px;
     display: block;
     text-align: left;
     line-height: 1.6;
-max-width: 800px;
+
 }
 
 
