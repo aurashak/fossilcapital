@@ -86,10 +86,12 @@ var legend = L.control({ position: 'bottomright' });
 legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
     div.innerHTML =
-        '<div style="background-color: yellow; width: 20px; height: 20px; border-radius: 50%;"></div>' +
-        ' California Mines<br>' +
-        '<div style="background-color: red; width: 20px; height: 5px; display: inline-block;"></div>' +
-        ' Natural Gas Pipelines';
+    div.innerHTML =
+    '<div style="background-color: yellow; width: 25px; height: 25px; border-radius: 50%; display: inline-block;"></div>' +
+    ' California Mines' +
+    '<br>' +
+    '<div style="background-color: red; width: 25px; height: 5px; display: inline-block;"></div>' +
+    ' Natural Gas Pipelines';
     return div;
 };
 
