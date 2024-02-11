@@ -56,12 +56,13 @@ h3 a:hover { text-decoration: underline; color: black; }
 }
 
 .container {
-  display: block;
-  margin: 10px;
-  max-width: 1200px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+    display: block;
+    margin: 70px auto;
+    max-width: 900px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
 }
 
 .courseaboutcontainer {
@@ -86,6 +87,7 @@ h3 a:hover { text-decoration: underline; color: black; }
             background-color: white;
             z-index: 1000; /* Ensure it's above other elements */
             padding: 10px;
+    border-bottom: 1px solid black;
 
 }
 
