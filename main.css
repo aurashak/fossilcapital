@@ -74,7 +74,7 @@ h3 a:hover { text-decoration: underline; color: black; background-color: #ffe600
 
 
 
-#map {height: 100vh; width: 100vh;}
+#map {height: 93vh; width: 100%;}
 
 .navigation a:link {
   text-decoration: none; 
