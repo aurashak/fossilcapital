@@ -1,7 +1,12 @@
 var map = L.map('map').setView([0, 0], 2); // Centered at California and zoom level 6
 
 // GeoJSON layer for yellow circles (California mines)
-var yellowCircles = L.layerGroup(); // Initialize as an empty layerGroup
+var yellowCircles = L.markerClusterGroup({
+    maxClusterRadius: 40, // Adjust this value based on your preference
+    spiderfyOnMaxZoom: true, // Display individual markers when zoomed in
+    showCoverageOnHover: false, // Disable coverage on hover
+    zoomToBoundsOnClick: true // Zoom to cluster bounds on click
+});
 
 // GeoJSON layer for red lines (Natural Gas Pipelines)
 var redLines = L.layerGroup(); // Initialize as an empty layerGroup
@@ -81,9 +86,9 @@ var legend = L.control({ position: 'bottomright' });
 legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
     div.innerHTML =
-        '<div style="background-color: yellow; width: 25px; height: 25px; border-radius: 50%;"></div>' +
+        '<div style="background-color: yellow; width: 20px; height: 20px; border-radius: 50%;"></div>' +
         ' California Mines<br>' +
-        '<div style="background-color: red; width: 25px; height: 5px; display: inline-block;"></div>' +
+        '<div style="background-color: red; width: 20px; height: 5px; display: inline-block;"></div>' +
         ' Natural Gas Pipelines';
     return div;
 };
