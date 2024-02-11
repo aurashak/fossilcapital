@@ -1,21 +1,20 @@
-var map = L.map('map').setView([], 20); // NYC coordinates and zoom level 12
+var map = L.map('map').setView([0, 0], 2); // Centered at [0, 0] and zoom level 2
 
-  // Satellite layer
-  var satelliteLayer = L.tileLayer.provider('Esri.WorldImagery');
+// Satellite layer
+var satelliteLayer = L.tileLayer.provider('Esri.WorldImagery');
 
-  // OSM layer
-  var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-  });
+// OSM layer
+var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors'
+});
 
+// Leaflet layers control
+var baseLayers = {
+  'Satellite': satelliteLayer,
+  'OpenStreetMap': osmLayer
+};
 
-  // Leaflet layers control
-  var baseLayers = {
-    'Satellite': satelliteLayer,
-    'OpenStreetMap': osmLayer
-  };
+L.control.layers(baseLayers).addTo(map);
 
-  L.control.layers(baseLayers).addTo(map);
-
-  // Set default layer
-  satelliteLayer.addTo(map);
+// Set default layer
+satelliteLayer.addTo(map);
