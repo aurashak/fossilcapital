@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="https://aurashak.github.io/fossilcapital/supportingdocs/visionboard.html">Vision Board</a>
             <a href="https://aurashak.github.io/fossilcapital/supportingdocs/notes.html">Notes</a>
             <a href="https://aurashak.github.io/fossilcapital/supportingdocs/sources.html">Sources</a>
+            <a href="https://aurashak.github.io/fossilcapital/supportingdocs/syllabus.html">Syllabus</a>
+
         </div>
     `;
 
