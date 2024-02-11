@@ -74,10 +74,8 @@ h3 a:hover { text-decoration: underline; color: black; }
     line-height: 1.6;
 }
 
-.courseaboutcontainer a:link {   color: black;
-}
-
-.courseaboutcontainer a:hover { text-decoration: underline; }
+.courseaboutcontainer a:link {   color: black; }
+.courseaboutcontainer a:hover { text-decoration: none; }
 
 .aboutcontainer a:link {   color: black; background-color: #ffe600ce; }
 .aboutcontainer a:visited { color: black; }

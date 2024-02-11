@@ -1,22 +1,27 @@
-
-
-
-
-  
-// Initialize the map
 var map = L.map('map').setView([40.7128, -74.0060], 12); // NYC coordinates and zoom level 12
-    
-// Add a tile layer (OpenStreetMap as an example)
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+  // Satellite layer
+  var satelliteLayer = L.tileLayer.provider('Esri.WorldImagery');
+
+  // OSM layer
+  var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
-}).addTo(map);
+  });
 
-// Add a satellite tile layer (Esri World Imagery)
-L.tileLayer.provider('Esri.WorldImagery').addTo(map);
-
-// Load GeoJSON data from URL
-L.geoJSON.ajax('https://aurashak.github.io/fossilcapital/mines.geojson', {
+  // Load GeoJSON data from URL
+  L.geoJSON.ajax('https://aurashak.github.io/fossilcapital/mines.geojson', {
     pointToLayer: function (feature, latlng) {
-        return L.marker(latlng, { icon: greenIcon });
+      return L.marker(latlng);
     }
-}).addTo(map);
+  }).addTo(map);
+
+  // Leaflet layers control
+  var baseLayers = {
+    'Satellite': satelliteLayer,
+    'OpenStreetMap': osmLayer
+  };
+
+  L.control.layers(baseLayers).addTo(map);
+
+  // Set default layer
+  satelliteLayer.addTo(map);
