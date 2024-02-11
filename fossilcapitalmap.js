@@ -1,4 +1,4 @@
-var map = L.map('map').setView([37.7749, -122.4194], 6); // Centered at California and zoom level 6
+var map = L.map('map').setView([0, 0], 2); // Centered at California and zoom level 6
 
 // Purple icon
 var purpleIcon = L.icon({
@@ -34,10 +34,11 @@ fetch('https://aurashak.github.io/fossilcapital/gisfiles/californiamines.geojson
   .catch(error => console.error('Error fetching GeoJSON for purple markers:', error));
 
 // GeoJSON layer for red lines
+var redLines;
 fetch('https://aurashak.github.io/fossilcapital/gisfiles/naturalgaspipelines.geojson')
   .then(response => response.json())
   .then(data => {
-    L.geoJSON(data, {
+    redLines = L.geoJSON(data, {
       style: function (feature) {
         return {
           color: 'red',
