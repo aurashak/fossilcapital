@@ -8,12 +8,6 @@ var map = L.map('map').setView([40.7128, -74.0060], 12); // NYC coordinates and 
     attribution: '© OpenStreetMap contributors'
   });
 
-  // Load GeoJSON data from URL
-  L.geoJSON.ajax('https://aurashak.github.io/fossilcapital/mines.geojson', {
-    pointToLayer: function (feature, latlng) {
-      return L.marker(latlng);
-    }
-  }).addTo(map);
 
   // Leaflet layers control
   var baseLayers = {
