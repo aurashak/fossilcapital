@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="navigation" style="font-weight: bold; "><a href="https://aurashak.github.io/fossilcapital/index.html">FOSSIL CAPITAL MAP</a></div>
         <div class="navigation" id="projectsLink">SUPPORTING DOCUMENTS</div>
         <div class="hidden-projects" id="projectsList">
-            <a href="https://aurashak.github.io/fossilcapital/visionboard.html">Vision Board</a>
-            <a href="https://aurashak.github.io/fossilcapital/notes.html">Notes</a>
-            <a href="https://aurashak.github.io/fossilcapital/sources.html">Sources</a>
+            <a href="https://aurashak.github.io/fossilcapital/supportingdocs/visionboard.html">Vision Board</a>
+            <a href="https://aurashak.github.io/fossilcapital/supportingdocs/notes.html">Notes</a>
+            <a href="https://aurashak.github.io/fossilcapital/supportingdocs/sources.html">Sources</a>
         </div>
     `;
 
