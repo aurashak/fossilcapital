@@ -13,19 +13,25 @@ var purpleIcon = L.icon({
 // GeoJSON layer with clustering
 var markers = L.markerClusterGroup({
   maxClusterRadius: 80, // Adjust this value based on your preference
-  spiderfyDistanceMultiplier: 2, // Adjust this value based on your preference
+  spiderfyDistanceMultiplier: 2 // Adjust this value based on your preference
 });
 
-L.geoJSON.ajax('https://aurashak.github.io/fossilcapital/gisfiles/californiamines.geojson', {
-  pointToLayer: function (feature, latlng) {
-    return L.marker(latlng, { icon: purpleIcon });
-  },
-  onEachFeature: function (feature, layer) {
-    layer.bindPopup(feature.properties.name); // You can customize the popup content
-  }
-}).addTo(markers);
+// Fetch GeoJSON data
+fetch('https://aurashak.github.io/fossilcapital/gisfiles/californiamines.geojson')
+  .then(response => response.json())
+  .then(data => {
+    L.geoJSON(data, {
+      pointToLayer: function (feature, latlng) {
+        return L.marker(latlng, { icon: purpleIcon });
+      },
+      onEachFeature: function (feature, layer) {
+        layer.bindPopup(feature.properties.name); // You can customize the popup content
+      }
+    }).addTo(markers);
 
-map.addLayer(markers);
+    map.addLayer(markers);
+  })
+  .catch(error => console.error('Error fetching GeoJSON:', error));
 
 // Satellite layer
 var satelliteLayer = L.tileLayer.provider('Esri.WorldImagery');
