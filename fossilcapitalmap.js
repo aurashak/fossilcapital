@@ -34,14 +34,19 @@ fetch('https://aurashak.github.io/fossilcapital/gisfiles/californiamines.geojson
   .catch(error => console.error('Error fetching GeoJSON for purple markers:', error));
 
 // GeoJSON layer for red lines
-var redLines = L.geoJSON.ajax('https://aurashak.github.io/fossilcapital/gisfiles/naturalgaspipelines.geojson', {
-  style: function (feature) {
-    return {
-      color: 'red',
-      weight: 2
-    };
-  }
-}).addTo(map);
+fetch('https://aurashak.github.io/fossilcapital/gisfiles/naturalgaspipelines.geojson')
+  .then(response => response.json())
+  .then(data => {
+    L.geoJSON(data, {
+      style: function (feature) {
+        return {
+          color: 'red',
+          weight: 2
+        };
+      }
+    }).addTo(map);
+  })
+  .catch(error => console.error('Error fetching GeoJSON for red lines:', error));
 
 // Satellite layer
 var satelliteLayer = L.tileLayer.provider('Esri.WorldImagery');
@@ -56,6 +61,9 @@ var baseLayers = {
   'Satellite': satelliteLayer,
   'OpenStreetMap': osmLayer
 };
+
+// Set maxZoom for the map
+map.setMaxZoom(18); // Adjust this value based on your preference
 
 // Overlay layers control
 var overlayLayers = {
