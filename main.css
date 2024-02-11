@@ -51,7 +51,7 @@ h3 a:link { color: black; }
 h3 a:hover { text-decoration: underline; color: black; }
 
 #map { 
-  height: 400px; 
+  height: 100vh; 
   width: 900px; 
 }
 
@@ -65,10 +65,8 @@ h3 a:hover { text-decoration: underline; color: black; }
 }
 
 .courseaboutcontainer {
-    font-size: 20px;
-    display: block;
-    text-align: center;
-    line-height: 1.6;
+ margin-top: 40px; 
+
 }
 
 .courseaboutcontainer a:link {   color: black; }
@@ -81,12 +79,14 @@ h3 a:hover { text-decoration: underline; color: black; }
 
 
 .courseheader {
-    /* justify-content: left; */
-    position: absolute;
-    z-index: 500;
-    background: white;
-    padding: 10px;
-    width: 100%;
+ position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            z-index: 1000; /* Ensure it's above other elements */
+            padding: 10px;
+
 }
 
 .coursenavigation {
