@@ -1,29 +1,34 @@
 var map = L.map('map').setView([0, 0], 2); // Centered at California and zoom level 6
 
-// GeoJSON layer for default markers with clustering
-var markers = L.markerClusterGroup({
-    maxClusterRadius: 80, // Adjust this value based on your preference
-    spiderfyDistanceMultiplier: 2 // Adjust this value based on your preference
-});
+// GeoJSON layer for yellow circles (California mines)
+var yellowCircles = L.layerGroup(); // Initialize as an empty layerGroup
 
-// GeoJSON layer for red lines
+// GeoJSON layer for red lines (Natural Gas Pipelines)
 var redLines = L.layerGroup(); // Initialize as an empty layerGroup
 
-// Fetch GeoJSON data for default markers
+// Fetch GeoJSON data for yellow circles (California mines)
 fetch('https://aurashak.github.io/fossilcapital/gisfiles/californiamines.geojson')
     .then(response => response.json())
     .then(data => {
         L.geoJSON(data, {
+            pointToLayer: function (feature, latlng) {
+                return L.circleMarker(latlng, {
+                    radius: 5, // Adjust the radius as needed
+                    color: 'yellow',
+                    fillColor: 'yellow',
+                    fillOpacity: 1
+                });
+            },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup(feature.properties.name); // You can customize the popup content
             }
-        }).addTo(markers);
+        }).addTo(yellowCircles);
 
-        map.addLayer(markers);
+        map.addLayer(yellowCircles);
     })
-    .catch(error => console.error('Error fetching GeoJSON for default markers:', error));
+    .catch(error => console.error('Error fetching GeoJSON for yellow circles:', error));
 
-// Fetch GeoJSON data for red lines
+// Fetch GeoJSON data for red lines (Natural Gas Pipelines)
 fetch('https://aurashak.github.io/fossilcapital/gisfiles/naturalgaspipelines.geojson')
     .then(response => response.json())
     .then(data => {
@@ -60,15 +65,15 @@ map.setMaxZoom(18); // Adjust this value based on your preference
 
 // Overlay layers control
 var overlayLayers = {
-    'Default Markers': markers,
-    'Red Lines': redLines
+    'Yellow Circles (Mines)': yellowCircles,
+    'Red Lines (Pipelines)': redLines
 };
 
 L.control.layers(baseLayers, overlayLayers).addTo(map);
 
 // Set default layers
 satelliteLayer.addTo(map);
-markers.addTo(map); // Add default markers by default
+yellowCircles.addTo(map); // Add yellow circles by default
 
 // Legend
 var legend = L.control({ position: 'bottomright' });
@@ -76,9 +81,10 @@ var legend = L.control({ position: 'bottomright' });
 legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
     div.innerHTML =
+        '<div style="background-color: yellow; width: 25px; height: 25px; border-radius: 50%;"></div>' +
+        ' California Mines<br>' +
         '<div style="background-color: red; width: 25px; height: 5px; display: inline-block;"></div>' +
-        ' Nat Gas Pipelines<br>' +
-        '<span style="font-weight: bold;">Points</span> represent default markers';
+        ' Natural Gas Pipelines';
     return div;
 };
 
