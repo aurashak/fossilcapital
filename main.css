@@ -35,7 +35,6 @@ h2 {
 h3 {
   font-size: 20px;
   font-weight: normal;
-  max-width: 800px;
   line-height: 1.6;
   margin: 0px;
 }
@@ -43,7 +42,6 @@ h3 {
 h4 {
   font-size: 20px;
   font-weight: heavy;
-  max-width: 800px;
   margin: 0px;
   padding: 0px;
 }
@@ -212,7 +210,6 @@ overflow: auto;
 .aboutcontainer {
   font-size: 20px;
   margin: 20px auto;
-  max-width: 800px;
   padding: 5px 10px;
   display: block;
   text-align: center;
@@ -223,12 +220,10 @@ overflow: auto;
 .courseaboutcontainer {
     font-size: 20px;
     margin: 20px auto;
-    max-width: 800px;
     padding: 5px 10px;
     display: block;
     text-align: left;
     line-height: 1.6;
-max-width: 800px;
 }
 
 
