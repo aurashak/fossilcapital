@@ -35,7 +35,6 @@ h2 {
 h3 {
   font-size: 20px;
   font-weight: normal;
-  line-height: 1.6;
   margin: 0px;
 }
 
@@ -296,20 +295,23 @@ li a:visited {
 
 
 .textbox {
-  padding: 15px 20px; 
-  margin: 0px auto; 
-  max-width: 600px;
-  border-radius: 4px;
-  background: #eeeeee;
-  text-align: left;
+    padding: 15px 20px;
+    margin: 0px auto;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 18px;
+    border: 1px solid black;
+    border-radius: 8px;
+    line-height: 1.4;
+
 }
 
 .textbox a:link {
-background-color: #ffe600ce;
+    color: black;
+    background: none;
 }
 
 .textbox a:hover {
-background-color: #ffe600ce;
     text-decoration: underline;
 }
 
