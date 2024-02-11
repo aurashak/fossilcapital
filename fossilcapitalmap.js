@@ -10,7 +10,7 @@ var purpleIcon = L.icon({
   shadowSize: [41, 41]
 });
 
-// GeoJSON layer for purple markers
+// GeoJSON layer for purple markers with clustering
 var markers = L.markerClusterGroup({
   maxClusterRadius: 80, // Adjust this value based on your preference
   spiderfyDistanceMultiplier: 2 // Adjust this value based on your preference
@@ -67,4 +67,4 @@ L.control.layers(baseLayers, overlayLayers).addTo(map);
 
 // Set default layers
 satelliteLayer.addTo(map);
-markers.addTo(map);  // Add purple markers by default
+markers.addTo(map); // Add purple markers by default
