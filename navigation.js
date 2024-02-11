@@ -2,15 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Create navigation elements
     const navigation = document.createElement("nav");
     navigation.innerHTML = `
-        <div class="navigation"><a href="https://aurashak.github.io">Home</a></div>
-        <div class="navigation"><a href="https://aurashak.github.io/about/about.html">About</a></div>
-        <div class="navigation"><a href="https://aurashak.github.io/resources/mappingresources.html">Mapping Resources</a></div>
-        <div class="navigation" id="projectsLink">Projects</div>
+        <div class="navigation"><a href="https://aurashak.github.io/fossilcapital/index.html">FOSSIL CAPITAL MAP</a></div>
+        <div class="navigation" id="projectsLink">SUPPORTING DOCUMENTS</div>
         <div class="hidden-projects" id="projectsList">
-            <a href="https://aurashak.github.io/projects/nymap/nymap.html">NY Map</a>
-            <a href="https://aurashak.github.io/projects/mts/mts.html">MTS</a>
-            <a href="https://aurashak.github.io/projects/nmca/nmca.html">NMCA</a>
-            <a href="https://aurashak.github.io/projects/nydisplacementmap/nydisplacementmap.html">Displacement Map</a>
+            <a href="https://aurashak.github.io/fossilcapital/visionboard.html">Vision Board</a>
+            <a href="https://aurashak.github.io/fossilcapital/notes.html">Notes</a>
+            <a href="https://aurashak.github.io/fossilcapital/sources.html">Sources</a>
         </div>
     `;
 
@@ -31,19 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Highlight the "Projects" button when a project page is being viewed
-    const projectPages = [
-        "https://aurashak.github.io/projects/nymap/nymap.html",
-        "https://aurashak.github.io/projects/mts/mts.html",
-        "https://aurashak.github.io/projects/nmca/nmca.html",
-        "https://aurashak.github.io/projects/nydisplacementmap/nydisplacementmap.html"
-    ];
+    
 
-    const projectsLink = document.getElementById("projectsLink");
-    if (projectPages.includes(currentURL)) {
-        projectsLink.classList.add("current-page");
-    }
-
+   
     // Toggle the visibility of projectsList when clicking on projectsLink
     const projectsList = document.getElementById("projectsList");
 
