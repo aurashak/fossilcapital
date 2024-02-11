@@ -87,10 +87,10 @@ legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
     div.innerHTML =
     div.innerHTML =
-    '<div style="background-color: yellow; width: 25px; height: 25px; border-radius: 50%; display: inline-block;"></div>' +
+    '<div style="background-color: yellow; width: 25px; height: 25px; border-radius: 50%; display: inline-block; align-items: center; justify-content: center;"></div>' +
     ' California Mines' +
     '<br>' +
-    '<div style="background-color: red; width: 25px; height: 5px; display: inline-block;"></div>' +
+    '<div style="background-color: red; width: 25px; height: 5px; display: inline-block; align-items: center; justify-content: center; "></div>' +
     ' Natural Gas Pipelines';
     return div;
 };
