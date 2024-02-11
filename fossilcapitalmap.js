@@ -45,7 +45,10 @@ fetch('https://aurashak.github.io/fossilcapital/gisfiles/naturalgaspipelines.geo
           weight: 2
         };
       }
-    }).addTo(map);
+    });
+
+    // Add redLines to map after it's defined
+    map.addLayer(redLines);
   })
   .catch(error => console.error('Error fetching GeoJSON for red lines:', error));
 
