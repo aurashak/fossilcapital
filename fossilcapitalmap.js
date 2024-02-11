@@ -10,13 +10,13 @@ var purpleIcon = L.icon({
   shadowSize: [41, 41]
 });
 
-// GeoJSON layer with clustering
+// GeoJSON layer for purple markers
 var markers = L.markerClusterGroup({
   maxClusterRadius: 80, // Adjust this value based on your preference
   spiderfyDistanceMultiplier: 2 // Adjust this value based on your preference
 });
 
-// Fetch GeoJSON data
+// Fetch GeoJSON data for purple markers
 fetch('https://aurashak.github.io/fossilcapital/gisfiles/californiamines.geojson')
   .then(response => response.json())
   .then(data => {
@@ -31,7 +31,17 @@ fetch('https://aurashak.github.io/fossilcapital/gisfiles/californiamines.geojson
 
     map.addLayer(markers);
   })
-  .catch(error => console.error('Error fetching GeoJSON:', error));
+  .catch(error => console.error('Error fetching GeoJSON for purple markers:', error));
+
+// GeoJSON layer for red lines
+var redLines = L.geoJSON.ajax('https://aurashak.github.io/fossilcapital/gisfiles/naturalgaspipelines.geojson', {
+  style: function (feature) {
+    return {
+      color: 'red',
+      weight: 2
+    };
+  }
+}).addTo(map);
 
 // Satellite layer
 var satelliteLayer = L.tileLayer.provider('Esri.WorldImagery');
@@ -47,7 +57,14 @@ var baseLayers = {
   'OpenStreetMap': osmLayer
 };
 
-L.control.layers(baseLayers).addTo(map);
+// Overlay layers control
+var overlayLayers = {
+  'Purple Markers': markers,
+  'Red Lines': redLines
+};
 
-// Set default layer
+L.control.layers(baseLayers, overlayLayers).addTo(map);
+
+// Set default layers
 satelliteLayer.addTo(map);
+markers.addTo(map);  // Add purple markers by default
