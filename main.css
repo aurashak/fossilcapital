@@ -51,7 +51,7 @@ h3 a:link { color: black; }
 h3 a:hover { text-decoration: underline; color: black; }
 
 #map { 
-  height: 100vh; 
+  height: 92vh; 
   width: 100%; 
 }
 
@@ -65,7 +65,7 @@ h3 a:hover { text-decoration: underline; color: black; }
 }
 
 .courseaboutcontainer {
- margin-top: 40px; 
+ margin: 40px 10px 10px 10px; 
 
 }
 
