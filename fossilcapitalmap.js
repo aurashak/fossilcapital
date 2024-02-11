@@ -16,6 +16,9 @@ var markers = L.markerClusterGroup({
   spiderfyDistanceMultiplier: 2 // Adjust this value based on your preference
 });
 
+// GeoJSON layer for red lines
+var redLines = L.layerGroup(); // Initialize as an empty layerGroup
+
 // Fetch GeoJSON data for purple markers
 fetch('https://aurashak.github.io/fossilcapital/gisfiles/californiamines.geojson')
   .then(response => response.json())
@@ -33,19 +36,18 @@ fetch('https://aurashak.github.io/fossilcapital/gisfiles/californiamines.geojson
   })
   .catch(error => console.error('Error fetching GeoJSON for purple markers:', error));
 
-// GeoJSON layer for red lines
-var redLines;
+// Fetch GeoJSON data for red lines
 fetch('https://aurashak.github.io/fossilcapital/gisfiles/naturalgaspipelines.geojson')
   .then(response => response.json())
   .then(data => {
-    redLines = L.geoJSON(data, {
+    L.geoJSON(data, {
       style: function (feature) {
         return {
           color: 'red',
           weight: 2
         };
       }
-    });
+    }).addTo(redLines);
 
     // Add redLines to map after it's defined
     map.addLayer(redLines);
