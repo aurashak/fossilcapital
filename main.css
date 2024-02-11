@@ -74,7 +74,12 @@ h3 a:hover { text-decoration: underline; color: black; background-color: #ffe600
 
 
 
-#map {height: 93vh; width: 100%;}
+#map {
+    height: 93vh;
+border-radius: 8px;
+    margin: 20px;
+
+}
 
 .navigation a:link {
   text-decoration: none; 
@@ -93,8 +98,7 @@ h3 a:hover { text-decoration: underline; color: black; background-color: #ffe600
 
 .navigation a.current-page,
 .navigation #projectsLink.current-page {
-    background-color: #ff00f680;
-    /* Add any other styling you want for the current page or button */
+
 }
 
 
@@ -223,11 +227,10 @@ overflow: auto;
 
 .courseaboutcontainer {
     font-size: 20px;
-    margin: 20px auto;
-    padding: 5px 10px;
     display: block;
     text-align: left;
     line-height: 1.6;
+
 }
 
 
