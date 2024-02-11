@@ -95,12 +95,13 @@ h3 a:hover { text-decoration: underline; color: black; background-color: #ffe600
 
 .navigation a.current-page,
 .navigation #projectsLink.current-page {
-    background-color: #ff00f6cf;
+    background-color: #ff00f680;
     /* Add any other styling you want for the current page or button */
 }
 
 
-.navigation:hover { color: black;     background-color: #ff00f6cf;
+.navigation:hover { color: black;     
+    background-color: #ff00f680;
 }
 
 .hidden-projects {
@@ -109,7 +110,7 @@ h3 a:hover { text-decoration: underline; color: black; background-color: #ffe600
 }
 
 .hidden-projects a.current-page {
-  background-color: #ffe600ce;
+    background-color: #ff00f680;
   /* Add any other styling you want for the current page or button */
 }
 
@@ -122,17 +123,17 @@ h3 a:hover { text-decoration: underline; color: black; background-color: #ffe600
 }
 
 .hidden-projects a:hover {
-  background-color: #ffe600ce;
+    background-color: #ff00f680;
 
 }
 
 .hidden-projects a:active {
-  background-color: #ffe600ce;
+    background-color: #ff00f680;
 
 }
 
 .hidden-projects a:selected {
-  background-color: #ffe600ce;
+    background-color: #ff00f680;
 
 }
 
@@ -467,15 +468,6 @@ background-color: #ffe600ce;
   }
 
 }
-
-
-
-
-
-
-
-
-
 
 
 
