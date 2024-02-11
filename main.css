@@ -309,6 +309,34 @@ li a:visited {
 
 
 
+/* Target the legend container */
+.leaflet-bottom.leaflet-right .info.legend {
+  background-color: #fff; /* Set the background color */
+  border: 1px solid #ccc; /* Set border style */
+  padding: 10px; /* Set padding */
+  border-radius: 5px; /* Set border radius */
+}
+
+/* Target the legend text */
+.leaflet-bottom.leaflet-right .info.legend img {
+  margin-bottom: 5px; /* Add spacing below the image */
+}
+
+/* Target the individual legend items */
+.leaflet-bottom.leaflet-right .info.legend div {
+  margin-bottom: 5px; /* Add spacing between legend items */
+}
+
+/* Target the red lines background color */
+.leaflet-bottom.leaflet-right .info.legend div[style*="background-color: red;"] {
+  background-color: blue; /* Override the background color for red lines */
+  /* Add any other styles you want to apply */
+}
+
+
+
+
+
 
 .textbox {
     padding: 15px 20px;
