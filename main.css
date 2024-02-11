@@ -21,6 +21,7 @@ h1 {
   padding: 0px;
   margin: 0px;
   display: inline-block;
+  background-color: #ffe600ce;
 }
 
 h2 {
@@ -32,93 +33,151 @@ h2 {
 }
 
 h3 {
-    font-size: 20px;
-    font-weight: normal;
-    /* line-height: 1.6; */
-    margin: 0px;
-
+  font-size: 20px;
+  font-weight: normal;
+  max-width: 800px;
+  line-height: 1.6;
+  margin: 0px;
 }
 
 h4 {
   font-size: 20px;
   font-weight: heavy;
+  max-width: 800px;
   margin: 0px;
   padding: 0px;
 }
 
 
-h3 a:link { color: black; }
-h3 a:hover { text-decoration: underline; color: black; }
+h3 a:link { color: black; background-color: #ffe600ce;}
+h3 a:hover { text-decoration: underline; color: black; background-color: #ffe600ce;}
 
-#map { 
-  height: 93vh; 
-  width: 100%; 
-}
-
-.container {
-    display: block;
-    margin: 70px auto;
-    max-width: 900px;
-    padding: 20px;
-    background: rgb(203, 203, 203);
-    border-radius: 8px;
-    text-align: center;
+.header {
+  display: flex;
+  justify-content: left;
+  margin: 0;
+  padding: 10px 10px;
+  border-bottom: 1px solid black;
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.6);
 
 }
 
-.courseaboutcontainer {
- margin: 55px 10px 10px 10px; 
+.navigation {
+  font-size: 20px;
+  text-align: left;
+  color: black;
+  margin: 0px 30px 0px 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+
+
+
+
+.navigation a:link {
+  text-decoration: none; 
+  color: black;
+}
+
+.navigation a:active{
+  text-decoration: none; 
+  color: black;
+}
+
+.navigation a:selected {
+  text-decoration: none; 
+  color: black;
+}
+
+.navigation a.current-page,
+.navigation #projectsLink.current-page {
+    background-color: #ffe600ce;
+    /* Add any other styling you want for the current page or button */
+}
+
+
+.navigation:hover { color: black; background-color: #ffe600ce;}
+
+.hidden-projects {
+  display: none; /* Initially hide the projects */
+  font-size: 20px;
+}
+
+.hidden-projects a.current-page {
+  background-color: #ffe600ce;
+  /* Add any other styling you want for the current page or button */
+}
+
+.hidden-projects a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    margin-right: 20px;
 
 }
 
-.courseaboutcontainer a:link {   color: black; }
-.courseaboutcontainer a:hover { text-decoration: none; }
+.hidden-projects a:hover {
+  background-color: #ffe600ce;
 
-.aboutcontainer a:link {   color: black; background-color: #ffe600ce; }
-.aboutcontainer a:visited { color: black; }
-.aboutcontainer a:hover { text-decoration: underline; }
-.aboutcontainer a:active { }
+}
+
+.hidden-projects a:active {
+  background-color: #ffe600ce;
+
+}
+
+.hidden-projects a:selected {
+  background-color: #ffe600ce;
+
+}
+
+
 
 
 .courseheader {
- position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: white;
-            z-index: 1000; /* Ensure it's above other elements */
-            padding: 10px;
-    border-bottom: 1px solid black;
-
+  justify-content: left;
+  position: relative;
+  
 }
 
 .coursenavigation {
-  font-size: 18px;
+  font-size: 20px;
   text-align: left;
-  display: inline-block;
-  color: rgb(0, 0, 0);
-  margin: 13px 15px 0px 0px;  
+    display: inline-block;
+  color: black;
+  padding: 5px 10px;
+margin: 13px 15px 0px 0px;  
+    background: rgb(237, 237, 237);
+  border-radius: 4px;
+  border: 1px solid black;
   justify-content: left;
+
 }
 
 .coursenavigation a:link {
 text-decoration: none;
-color: rgb(0, 0, 0);
+
 } 
 
 .coursenavigation a:hover {
   text-decoration: none;
-  color: rgb(59, 59, 59);
+  background-color: #ffe600ce;
 }
+
 
 .coursenavigation a:active {
   text-decoration: underline;
-  color: rgb(0, 0, 0);
+  background-color: #ffe600ce;
+
 }
 
 .coursenavigation a:visited {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  background-color: #ffe600ce;
+
 }
 
 
@@ -126,18 +185,364 @@ color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   height: 100vh; /* Set the height of the container to 100% of the viewport height */
+
 }
 
 .coursecontainer {
-  margin: 50px auto;
-  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Set the height of the container to 100% of the viewport height */
+overflow: auto;
+}
+
+.container {
+  display: block;
+}
+
+.mapheader {
+  display: block;
+  background: #ffffff;
+  border-bottom: 1px solid black;
+  padding: 13px 0px;
+}
+
+.aboutcontainer {
+  font-size: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 5px 10px;
+  display: block;
+  text-align: center;
+  line-height: 1.6;
+}
+
+
+.courseaboutcontainer {
+    font-size: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 5px 10px;
+    display: block;
+    text-align: left;
+    line-height: 1.6;
+max-width: 800px;
+}
+
+
+.courseaboutcontainer a:link {   color: black;
+}
+
+.courseaboutcontainer a:hover { text-decoration: underline; }
+
+.aboutcontainer a:link {   color: black; background-color: #ffe600ce;
+}
+.aboutcontainer a:visited { color: black; }
+.aboutcontainer a:hover { text-decoration: underline; }
+.aboutcontainer a:active { }
+
+
+
+.mapsectionleft {
+  flex-direction: row; /* Stack items vertically */
+  padding: 10px 20px;
+  font-size: 18px; 
+  line-height: 1.3;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.mapsectionleft a:link { color: black; text-decoration: underline;}
+.mapsectionleft a:hover { color: black; text-decoration: underline;}
+.mapsectionleft a:visited { color: black; text-decoration: underline;}
+.mapsectionleft a:active { color: black; text-decoration: underline;}
+
+.title { 
+}
+
+.subtitle {
+}
+
+.description {
+}
+
+.description a:link { color: black; }
+.description a:visited { color: black; }
+.description a:hover {  }
+
+
+li {
+margin-right: 10px;
+}
+
+li a {
+background-color: #ffe600ce;
+}
+
+li a:hover {
+  text-decoration: underline; 
+}
+
+li a:visited {
 }
 
 
 
 
-.leaflet-control {
-  cursor: auto;
+
+.textbox {
+  padding: 15px 20px; 
+  margin: 0px auto; 
+  max-width: 600px;
+  border-radius: 4px;
+  background: #eeeeee;
   text-align: left;
+}
+
+.textbox a:link {
+background-color: #ffe600ce;
+}
+
+.textbox a:hover {
+background-color: #ffe600ce;
+    text-decoration: underline;
+}
+
+
+
+.button {
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.leaflet-touch .leaflet-bar a:first-child {
+  border-top-right-radius: 2px;
+  color: black;
 
 }
+.leaflet-touch .leaflet-bar a:last-child {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  color: black;
+}
+
+/* Style the scale control */
+.leaflet-control-scale {
+  background-color: rgba(255, 255, 255, 0.7); /* Background color */
+  border: 1px solid #ccc; /* Border style */
+  border-radius: 5px; /* Border radius */
+  padding: 5px; /* Padding around the scale bar */
+  font-size: 12px; /* Font size */
+}
+
+
+/* Styling for the layer control box */
+.leaflet-control-layers {
+  background-color: rgba(255, 255, 255, 0.9); /* Background color with opacity */
+  border: 2px solid #ccc; /* Border color and width */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Padding inside the box */
+  font-family: Arial, sans-serif; /* Font family */
+  font-size: 14px; /* Font size */
+  max-width: 250px; /* Maximum width of the box */
+}
+
+/* Styling for the layer control headings */
+.leaflet-control-layers h4 {
+  margin-top: 0; /* Remove top margin for headings */
+  font-weight: bold; /* Bold text for headings */
+}
+
+/* Styling for the layer control labels */
+.leaflet-control-layers label {
+  display: block; /* Display labels as block elements */
+  margin-bottom: 5px; /* Margin between labels */
+}
+
+/* Styling for the layer control switches */
+.leaflet-control-layers input[type="checkbox"] {
+  margin-right: 5px; /* Margin between the checkbox and label */
+}
+
+/* Styling for the checked checkboxes (active layers) */
+.leaflet-control-layers input[type="checkbox"]:checked + label {
+  font-weight: bold; /* Bold text for active layers */
+  color: #0074D9; /* Change text color for active layers */
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+  h1 {
+      font-size: 20px;
+  }
+
+  h2 {
+      font-size: 18px;
+  }
+
+  h3 {
+      font-size: 16px;
+  }
+
+  .header {
+      padding: 0px;
+  }
+
+  .navigation {
+      font-size: 16px;
+      margin: 10px;
+  }
+
+  .container {
+      display: block;
+      margin: 0px;
+  }
+
+
+  .mapheader {
+    padding: 5px 0;
+}
+
+  .aboutcontainer {
+      font-size: 16px;
+      margin: 10px;
+  }
+
+  .hometitle {
+      font-size: 20px;
+      margin-top: 10px;
+      margin-left: 20px;
+  }
+
+  .homesubtitle {
+      font-size: 18px;
+      margin-top: 10px;
+      margin-left: 20px;
+  }
+
+  .maptitle {
+      font-size: 18px;
+      padding: 0px;
+      max-width: 600px;
+      margin: 10px;
+  }
+
+  .logoscontainer {
+    overflow: auto;
+}
+
+  .mapdescription {
+      font-size: 16px;
+      padding: 5px 10px;
+      line-height: 1.3;
+      max-width: 600px;
+  }
+
+  .mapcolumnleft { 
+    font-size: 16px;
+    padding: 10px; }
+  
+  .mapcolumnright {
+      font-size: 16px;
+      min-height: 400px;
+      padding: 10px;
+      border: none;
+  }
+
+  .mapsectionleft {
+      font-size: 16px;
+      padding: 5px 10px;
+  }
+
+
+ .textbox {
+  font-size: 16px;
+ }
+    
+  .placeidcontainer, 
+  .nydisplacementmap, 
+  .nmcacontainer, 
+  .mapcontainer, 
+  .nymapcontainer {
+    grid-template-columns: 1fr; /* Change this to a single column for smaller screens */
+  }
+
+  .columnlefttitle {
+      font-size: 14px;
+      padding: 5px;
+  }
+
+  .coords-box {
+      font-size: 14px;
+      height: 30px;
+  }
+
+  #nymap {    
+    height: 500px;
+    min-width: 300px;
+    margin: 5px;
+}
+
+  .hidden-projects {
+      font-size: 16px;
+      margin-left: 10px;
+  }
+
+  .hidden-projects a {
+      margin-right: 5px;
+  }
+
+  .courseheader {
+      flex-direction: column;
+            display: inline-block;
+
+  }
+
+  .coursenavigation {
+      font-size: 16px;
+      margin: 5px 0;
+      text-decoration: underline;
+  }
+
+  .coursenavigation a:link {
+      text-decoration: none;
+  }
+
+  .coursenavigation a:hover {
+      text-decoration: none;
+      background: lightgrey;
+  }
+
+  .coursenavigation a:active {
+      text-decoration: underline;
+  }
+
+  .coursenavigation a:visited {
+      text-decoration: none;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
