@@ -379,7 +379,9 @@ li a:visited {
   color: #0074D9; /* Change text color for active layers */
 }
 
-
+.leaflet-control-attribution svg {
+  width:0
+  }
 
 
 /* Media query for smaller screens (mobile devices) */
