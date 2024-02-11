@@ -198,7 +198,11 @@ overflow: auto;
 
 .container {
   display: block;
+  margin: 30px auto;
+  max-width: 900px;
+
 }
+
 
 .mapheader {
   display: block;
