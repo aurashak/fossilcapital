@@ -81,7 +81,7 @@ satelliteLayer.addTo(map);
 yellowCircles.addTo(map); // Add yellow circles by default
 
 // Legend
-var legend = L.control({ position: 'bottomright' });
+var legend = L.control({ position: 'topleft' });
 
 legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
