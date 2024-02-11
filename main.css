@@ -382,98 +382,24 @@ li a:visited {
 
 
 
-
-
-
-
-
-
-@media screen and (max-width: 600px) {
+/* Media query for smaller screens (mobile devices) */
+@media only screen and (max-width: 600px) {
   h1 {
-      font-size: 20px;
-  }
-
-  h2 {
-      font-size: 18px;
-  }
-
-  h3 {
-      font-size: 16px;
-  }
-
-  .header {
-      padding: 0px;
+    font-size: 20px;
   }
 
   .navigation {
-      font-size: 16px;
-      margin: 10px;
+    font-size: 16px;
   }
 
-  .container {
-      display: block;
-      margin: 0px;
+  #map {
+    margin: 10px;
   }
 
-
-  .mapheader {
-    padding: 5px 0;
+  .coursenavigation,
+  .courseaboutcontainer,
+  .textbox {
+    font-size: 16px;
+    padding: 10px;
+  }
 }
-
-  .aboutcontainer {
-      font-size: 16px;
-      margin: 10px;
-  }
-
-
-
-
- .textbox {
-  font-size: 16px;
- }
-    
-
-  .hidden-projects {
-      font-size: 16px;
-      margin-left: 10px;
-  }
-
-  .hidden-projects a {
-      margin-right: 5px;
-  }
-
-  .courseheader {
-      flex-direction: column;
-            display: inline-block;
-
-  }
-
-  .coursenavigation {
-      font-size: 16px;
-      margin: 5px 0;
-      text-decoration: underline;
-  }
-
-  .coursenavigation a:link {
-      text-decoration: none;
-  }
-
-  .coursenavigation a:hover {
-      text-decoration: none;
-      background: lightgrey;
-  }
-
-  .coursenavigation a:active {
-      text-decoration: underline;
-  }
-
-  .coursenavigation a:visited {
-      text-decoration: none;
-  }
-
-}
-
-
-
-
-
