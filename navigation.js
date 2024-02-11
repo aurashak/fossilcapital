@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Create navigation elements
     const navigation = document.createElement("nav");
     navigation.innerHTML = `
-        <div class="navigation" style="font-weight: bold; font-size: 25px;"><a href="https://aurashak.github.io/fossilcapital/index.html">FOSSIL CAPITAL MAP</a></div>
+        <div class="navigation" style="font-weight: bold; "><a href="https://aurashak.github.io/fossilcapital/index.html">FOSSIL CAPITAL MAP</a></div>
         <div class="navigation" id="projectsLink">SUPPORTING DOCUMENTS</div>
         <div class="hidden-projects" id="projectsList">
             <a href="https://aurashak.github.io/fossilcapital/visionboard.html">Vision Board</a>
