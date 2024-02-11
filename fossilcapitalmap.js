@@ -77,7 +77,8 @@ legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
     div.innerHTML =
         '<div style="background-color: red; width: 25px; height: 5px; display: inline-block;"></div>' +
-        ' Red Lines';
+        ' Red Lines<br>' +
+        '<span style="font-weight: bold;">Points</span> represent default markers';
     return div;
 };
 
