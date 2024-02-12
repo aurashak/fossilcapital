@@ -452,6 +452,13 @@ li a:visited {
     padding: 10px;
   }
     
+    .hidden-projects {
+  display: none; /* Initially hide the projects */
+  font-size: 16px;
+        margin-left: 10px;
+        margin-top: 5px;
+        
+}
     
 
 .textbox {
