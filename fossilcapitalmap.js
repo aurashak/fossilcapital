@@ -33,15 +33,25 @@ fetch('https://aurashak.github.io/fossilcapital/gisfiles/californiamines.geojson
     })
     .catch(error => console.error('Error fetching GeoJSON for yellow circles:', error));
 
-// Fetch GeoJSON data for red lines (Natural Gas Pipelines)
-fetch('https://aurashak.github.io/fossilcapital/gisfiles/naturalgaspipelines.geojson')
+
+    fetch('https://aurashak.github.io/fossilcapital/gisfiles/naturalgaspipelines.geojson')
     .then(response => response.json())
     .then(data => {
         L.geoJSON(data, {
             style: function (feature) {
+                // Get the current zoom level of the map
+                var currentZoom = map.getZoom();
+
+                // Define a range for zoom levels to adjust line weight
+                var minZoom = 2; // Adjust as needed
+                var maxZoom = 18; // Adjust as needed
+
+                // Calculate a weight based on the zoom level
+                var weight = 2 + (currentZoom - minZoom) / (maxZoom - minZoom) * 5;
+
                 return {
                     color: 'red',
-                    weight: 2
+                    weight: weight
                 };
             }
         }).addTo(redLines);
@@ -79,6 +89,15 @@ L.control.layers(baseLayers, overlayLayers).addTo(map);
 // Set default layers
 satelliteLayer.addTo(map);
 yellowCircles.addTo(map); // Add yellow circles by default
+
+map.on('zoomend', function () {
+    // Update the style of redLines when the map's zoom level changes
+    redLines.eachLayer(function (layer) {
+        layer.setStyle({
+            weight: 2 + (map.getZoom() - minZoom) / (maxZoom - minZoom) * 5
+        });
+    });
+});
 
 // Legend
 var legend = L.control({ position: 'topleft' });
