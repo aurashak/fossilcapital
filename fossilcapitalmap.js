@@ -105,10 +105,10 @@ var legend = L.control({ position: 'topleft' });
 legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
     div.innerHTML =
-        '<div style="background-color: yellow; width: 25px; height: 25px; border-radius: 50%; display: inline-block; vertical-align: middle;"></div>' +
+        '<div style="background-color: yellow; vertical-align: middle; width: 25px; height: 25px; border-radius: 50%; display: inline-block; vertical-align: middle;"></div>' +
         '<span style="display: inline-block; vertical-align: middle; line-height: 25px;"> &nbsp; California Mines</span>' +
         '<br>' +
-        '<div style="background-color: red; width: 25px; height: 5px; display: inline-block; margin-left:"></div>' +
+        '<div style="background-color: red; vertical-align: middle; width: 25px; height: 5px; display: inline-block; margin-left:"></div>' +
         '<span style="display: inline-block; vertical-align: middle; line-height: 5px;"> &nbsp;  Natural Gas Pipelines</span>';
     return div;
 };
