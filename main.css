@@ -463,7 +463,7 @@ li a:visited {
 
 .textbox {
     padding: 15px 20px;
-    margin: 20px;
+    margin: 10px;
     border-radius: 4px;
     text-align: left;
     font-size: 18px;
@@ -478,7 +478,7 @@ h2 {
   font-weight: bold;
   color: #333; 
   padding: 0px;
-  margin: 20px;
+  margin: 0px 10px 0 10px;
 }
     
     
