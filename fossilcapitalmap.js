@@ -1,4 +1,4 @@
-var map = L.map('map').setView([0, 0], 2); // Centered at California and zoom level 6
+var map = L.map('map').setView([0, 0], 2); // Centered at California and zoom level 2
 
 // GeoJSON layer for yellow circles (California mines)
 var yellowCircles = L.markerClusterGroup({
@@ -10,6 +10,10 @@ var yellowCircles = L.markerClusterGroup({
 
 // GeoJSON layer for red lines (Natural Gas Pipelines)
 var redLines = L.layerGroup(); // Initialize as an empty layerGroup
+
+// Variables for adjusting line weight
+var minZoom = 2; // Adjust as needed
+var maxZoom = 18; // Adjust as needed
 
 // Fetch GeoJSON data for yellow circles (California mines)
 fetch('https://aurashak.github.io/fossilcapital/gisfiles/californiamines.geojson')
@@ -33,18 +37,14 @@ fetch('https://aurashak.github.io/fossilcapital/gisfiles/californiamines.geojson
     })
     .catch(error => console.error('Error fetching GeoJSON for yellow circles:', error));
 
-
-    fetch('https://aurashak.github.io/fossilcapital/gisfiles/naturalgaspipelines.geojson')
+// Fetch GeoJSON data for red lines (Natural Gas Pipelines)
+fetch('https://aurashak.github.io/fossilcapital/gisfiles/naturalgaspipelines.geojson')
     .then(response => response.json())
     .then(data => {
         L.geoJSON(data, {
             style: function (feature) {
                 // Get the current zoom level of the map
                 var currentZoom = map.getZoom();
-
-                // Define a range for zoom levels to adjust line weight
-                var minZoom = 2; // Adjust as needed
-                var maxZoom = 18; // Adjust as needed
 
                 // Calculate a weight based on the zoom level
                 var weight = 2 + (currentZoom - minZoom) / (maxZoom - minZoom) * 5;
@@ -105,13 +105,12 @@ var legend = L.control({ position: 'topleft' });
 legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
     div.innerHTML =
-        '<div style="background-color: yellow; vertical-align: middle; width: 25px; height: 25px; border-radius: 50%; display: inline-block; vertical-align: middle;"></div>' +
+        '<div style="background-color: yellow; width: 25px; height: 25px; border-radius: 50%; display: inline-block; vertical-align: middle;"></div>' +
         '<span style="display: inline-block; vertical-align: middle; line-height: 25px;"> &nbsp; California Mines</span>' +
         '<br>' +
-        '<div style="background-color: red; vertical-align: middle; width: 25px; height: 5px; display: inline-block; margin-left:"></div>' +
+        '<div style="background-color: red; width: 25px; height: 5px; display: inline-block; vertical-align: middle; margin-left:"></div>' +
         '<span style="display: inline-block; vertical-align: middle; line-height: 5px;"> &nbsp;  Natural Gas Pipelines</span>';
     return div;
 };
 
 legend.addTo(map);
-
