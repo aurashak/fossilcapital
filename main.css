@@ -312,10 +312,13 @@ li a:visited {
 
 /* Target the legend container */
 .leaflet-top.leaflet-left .info.legend {
-  background-color: #fff; /* Set the background color */
-  border: 1px solid #ccc; /* Set border style */
-  padding: 10px; /* Set padding */
-  border-radius: 5px; /* Set border radius */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    align-items: center;
+
 }
 
 /* Target the legend text */
